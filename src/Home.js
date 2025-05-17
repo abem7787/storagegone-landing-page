@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import './App.css';
+import logo from '../src/img/logo.png';
 import 'font-awesome/css/font-awesome.min.css';
 import { FaBars, FaBoxOpen, FaWarehouse, FaSearch, FaUser, FaLock, FaThermometerHalf, FaChartLine } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -95,9 +96,15 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ duration: 2 }}
         >
-          <div className="h-35 sm:h-28 md:h-36 lg:h-40 w-auto mr-6 transition-transform duration-700 hover:scale-105 bg-blue-600 text-white flex items-center justify-center text-xl font-bold rounded-lg">
-            dfindz
-          </div>
+          <Link to="/" className="flex items-center">
+            <motion.img 
+              src={logo} 
+              alt="dfindz logo"
+              className="h-12 sm:h-14 md:h-16 w-auto mr-2 transition-transform duration-700 hover:scale-105"
+              whileHover={{ scale: 1.05 }}
+            />
+            <span className="text-xl font-bold text-blue-900 hidden sm:block">dfindz</span>
+          </Link>
         </motion.div>
 
         <div className="md:hidden flex items-center">
